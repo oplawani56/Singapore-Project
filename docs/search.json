@@ -6,15 +6,15 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-06-23T20:05:23-04:00"
+      "last_modified": "2021-06-24T13:23:39-04:00"
     },
     {
       "path": "index.html",
-      "title": "Singapore and Age",
-      "description": "Welcome to the website. I hope you enjoy it!\n",
+      "title": "An Analysis of the Causes of Singapores Rapidly Aging Population",
+      "description": "This is an investigation of the relationship between Singapore's aging population and the nation-state's declining birth rates",
       "author": [],
-      "contents": "\n\n\n\n\n\n\n",
-      "last_modified": "2021-06-23T20:05:23-04:00"
+      "contents": "\n\n\nknitr::opts_chunk$set(echo = FALSE)\n\n\n\n\n\n\n\n# A tibble: 1 x 1\n  `sum(value)`\n         <dbl>\n1      3514663\n\n\n\n\n\n\n\n\n\n\n```{.r .distill-force-highlighting-css}\n\n\n",
+      "last_modified": "2021-06-24T13:30:25-04:00"
     }
   ],
   "collections": []

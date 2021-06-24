@@ -1,26 +1,23 @@
 ---
-title: "Singapore and Age"
-description: |
-  Welcome to the website. I hope you enjoy it!
+title: "An Analysis of the Causes of Singapores Rapidly Aging Population"
+description: This is an investigation of the relationship between Singapore's aging population and the nation-state's declining birth rates
 site: distill::distill_website
 ---
 
-```{r setup, include=FALSE}
+```{r, Genisis - Singapore}
 knitr::opts_chunk$set(echo = FALSE)
-library(tidyverse)
-
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
-
-# Learn more about publishing to GitHub Pages at:
-# https://rstudio.github.io/distill/publish_website.html#github-pages
-
 ```
 
-```{r}
+```{r, Exodus - Singapore}
+library(tidyverse)
+library(readr)
+library(ggthemes)
+```
+
+```{r, Population Pyramid - Singapore}
 s_data <- read_csv(file = "FN-Sing-Residents-Age/Sing-Residents-Age.csv", na = "na")
 
-sum <- s_data %>% 
+s_data %>% 
   filter(year == 2015) %>% 
   filter(level_1 == "Total Residents") %>% 
   filter(level_2 %in% c("0 - 4 Years", "5 - 9 Years", "10 - 14 Years", "15 - 19 Years", "20 - 24 Years", "25 - 29 Years", "30 - 34 Years", "35 - 39 Years", "40 - 44 Years", "45 - 49 Years", "50 - 54 Years", "55 - 59 Years", "60 - 64 Years", "65 - 69 Years", "70 - 74 Years", "75 - 79 Years", "80 Years & Over")) %>% 
@@ -30,19 +27,63 @@ s_data %>%
   filter(year == 2015) %>% 
   filter(level_1 %in% c("Total Male Residents", "Total Female Residents")) %>% 
   mutate(value = if_else(level_1 == "Total Female Residents", value * -1, value)) %>%
-  
   filter(level_2 %in% c("0 - 4 Years", "5 - 9 Years", "10 - 14 Years", "15 - 19 Years", "20 - 24 Years", "25 - 29 Years", "30 - 34 Years", "35 - 39 Years", "40 - 44 Years", "45 - 49 Years", "50 - 54 Years", "55 - 59 Years", "60 - 64 Years", "65 - 69 Years", "70 - 74 Years", "75 - 79 Years", "80 Years & Over")) %>% 
-  
   mutate(level_2 = factor(level_2, levels = c("0 - 4 Years", "5 - 9 Years", "10 - 14 Years", "15 - 19 Years", "20 - 24 Years", "25 - 29 Years", "30 - 34 Years", "35 - 39 Years", "40 - 44 Years", "45 - 49 Years", "50 - 54 Years", "55 - 59 Years", "60 - 64 Years", "65 - 69 Years", "70 - 74 Years", "75 - 79 Years", "80 Years & Over"))) %>%
-  
   ggplot(aes(x = value/3514663, y = level_2, fill = level_1)) +
   geom_col() +
-  scale_x_continuous(limits = c(-0.05, 0.05), breaks = seq(-0.05, 0.05, 0.02), labels = c("5.0%", "3.0%", "1.0%", "1.0%", "3.0%", "5.0%")) +
+  geom_text(aes(x = if_else(value > 0, value/3514663 + .007, value/3514663 - .007),
+                y = level_2,
+                label = paste(round(abs(value)/3514663 *100, 1), "%", sep = "")))  +
+  scale_x_continuous(limits = c(-0.06, 0.06), breaks = seq(-0.05, 0.05, 0.02), labels = c("5.0%", "3.0%", "1.0%", "1.0%", "3.0%", "5.0%")) +
+  scale_fill_manual(values = c("red4", "navyblue")) + 
+  theme_classic() +
+  
 labs(title = "Break Down of Singapore's Population",
-     subtitle = "Singapores Older Population Outnumbers its Younger     Population",
-     x = "Legend", 
+     subtitle = "Singapore's Older Population Outnumbers its Younger Population",
+     x = "", 
      y = "Age",
-     caption = "Singapore - 2015 
+     fill = "Legend",
+     caption  = "Singapore - 2015 
                 Population: 3,514,663
                 Source: data.gov.sg")
 ```
+
+```{r, Crude Birth Graph - Singapore}
+s_data <- read_csv(file = "FN-Births-And-Fertility-Annual/Crude-Birth-Rate.csv", na = "na")
+
+s_data %>% 
+  select(year, level_1, value) %>% 
+  ggplot(data = s_data,
+         mapping = aes(x = year, y = value) ) +
+  geom_line(color = "navyblue") +
+  theme_classic() +
+  scale_x_continuous(limits = c(1960, 2010), breaks = seq(1960, 2010, 5)) +
+  scale_y_continuous(limits = c(10, 40), breaks = seq(10, 40, 5)) +
+  
+  labs(title = "Crude Birth Rate in Singapore Over Time",
+       subtitle = "Add this later",
+       x = "Year",
+       y = "Crude Birth Rate",
+       caption = "Source: data.gov.sg")
+```
+
+```{r, Live Birth Graph - Singapore}
+s_data <- read_csv(file = "FN-Births-And-Fertility-Annual/Total-Fertility-And-Reproduction-Rate.csv", na = "na")
+
+s_data %>% 
+  ggplot(mapping = aes(x = year, y = value, color = level_1)) +
+  geom_line() +
+  theme_classic() +
+  scale_x_continuous(limits = c(1960, 2020), breaks = seq(1960, 2020, 5)) +
+  
+labs(title = "Total Fertility and Reproductive Rate in Singapore Over Time",
+       subtitle = "Add this later",
+       x = "Year",
+       y = "Fertility/Reproduction Rate",
+       color = "Legend",
+       caption = "Source: data.gov.sg")
+```
+
+```
+
+
