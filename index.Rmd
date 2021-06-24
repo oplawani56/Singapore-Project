@@ -61,7 +61,7 @@ One might ask, "Why this is a big deal?" It is extremely common for developed or
 ### Singapore's Declining Birth Rates:  
 Below we have a graphic depicting Singapore's crude birth rate over the years.  
 
-*Note: Crude birth rate is the number of live births per 1000 population in a given year.  
+**-Note:** Crude birth rate is the number of live births per 1000 population in a given year.  
 
 The x-axis correlates with the year and the y-axis correlates to crude birth rates. The data was retrieved from data.gov.sg.
 

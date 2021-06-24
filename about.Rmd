@@ -1,7 +1,7 @@
 ---
 title: "About This Site"
 description: |
-  My name is Osaretin Lawani. I am ver interested in STEM and currently a junior at Princess Anne High School. You can reach me at osap.lawani@gmail.com
+  My name is Osaretin Lawani. I am very interested in STEM and currently a junior at Princess Anne High School. You can reach me at osap.lawani@gmail.com
 ---
 
 ```{r setup, include=FALSE}
