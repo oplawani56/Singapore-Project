@@ -2,19 +2,19 @@
   "articles": [
     {
       "path": "about.html",
-      "title": "About this site",
+      "title": "About This Site",
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-06-24T13:23:39-04:00"
+      "last_modified": "2021-06-24T13:36:37-04:00"
     },
     {
       "path": "index.html",
       "title": "An Analysis of the Causes of Singapores Rapidly Aging Population",
-      "description": "This is an investigation of the relationship between Singapore's aging population and the nation-state's declining birth rates",
+      "description": "This is an investigation of the relationship between Singapore's aging population and the nation-state's declining birth rates.",
       "author": [],
-      "contents": "\n\n\nknitr::opts_chunk$set(echo = FALSE)\n\n\n\n\n\n\n\n# A tibble: 1 x 1\n  `sum(value)`\n         <dbl>\n1      3514663\n\n\n\n\n\n\n\n\n\n\n```{.r .distill-force-highlighting-css}\n\n\n",
-      "last_modified": "2021-06-24T13:30:25-04:00"
+      "contents": "\n\n\n\nIntroduction: The following presentation investigates Singapore’s aging population in detail and delves into the main reasons why the population is so disproportionately dominated by older individuals. After careful research, it was determined that the main reason why Singapore’s population is aging rapidly is chiefly caused by the rapidly decreasing birth rate of the nation state. The following graphics in this investigation will discuss the relationship between the two and solutions the Singaporean government has attempted to employ to solve this pressing issue.\nSingapore’s Old and Aging Population: Below we have a graphic (population pyramid) depicting the makeup of Singapore’s Population in 2015. Every red bar represents the percent of women of that age group in the sample population and every blue bar represents the percent of men of that age group in the sample population. According the the graphic, Singapore’s - sample - population in 2015 was 3,514,663; men making up 48.9% population or approximately 1,718,670 in number. And women making up 51.1% of the population or approximately 1,795,993 in number. The y-axis shows that the age ranges of 10 - 80 & over were sampled.\n\n\n\nAccording to the graphic above, 28.2% (approx. 991,135) of the individuals sampled in this graphic are 29 years or younger. Meaning that 71.8% (approx. 2,523,528) of the sample population is older than 30. This gives a little insight as to why Singapore’s population is getting older faster. A woman’s fertility peaks between the late teens and late-20s, after which it starts to decline slowly; fertility generally starts to reduce when a woman is in her early 30s, and more so after the age of 35. By age 40, the chance of getting pregnant in any monthly cycle is around 5%. Therefore, if the majority of in a population are older as a result, less children will be born. Although the graphic only shows data for the year 2015, the disparity between the old and young in Singapore’s Population has gotten greater each year. This led me to conclude that one of the main causes of Singapore’s rapidly ageing population is due to the low and falling birth rates.\nWhy Does This Matter?: One might ask: Why this is a big deal? As it is extremely common for developed or “first-world” countries to experience a dip in birth rate as a byproduct of economic progress. While this is true as a total fertility rate below the replacement level of 2.1 is now the norm for advanced economies. Singapore, along with many other east and south-east Asian countries have been experiencing extremely low birth rates through the years. Well below the global average. In the absence of immigration, Singapore is set to experience the most rapid population aging - as depicted in the graphic above - and decline.\nSingapore’s Declining Birth Rates:\n\n\n\n\n\n\n\n\n\n",
+      "last_modified": "2021-06-24T16:33:11-04:00"
     }
   ],
   "collections": []
